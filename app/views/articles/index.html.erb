@@ -1,0 +1,11 @@
+<h1>My Articles</h1>
+<p></p>
+
+<ul>
+<%  @articles.each do |article| %>
+<li><%= link_to article.title, article_path(article) %> &nbsp;-&nbsp; <%= link_to "✏️", edit_article_path(article) %> <%= link_to "🗑️", article_path(article), method: :delete, data: { confirm: "Seguroski?"} %></li>
+
+<% end %>
+
+</ul>
+<p><%= link_to 'Add a new article', new_article_path%></p>

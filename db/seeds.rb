@@ -13,8 +13,11 @@ puts "La base de datos ha sido limpiada"
 puts "Creating records for database, hold on..."
 100.times do
   article = Article.create(
-    title: Faker::Books::CultureSeries.planet,
-    content: Faker::Books::Lovecraft.paragraph
+# Lovecraftian and Culture referencesm
+#    title: Faker::Books::CultureSeries.planet,
+#    content: Faker::Books::Lovecraft.paragraph
+     title: Faker::Marketing.buzzwords,
+     content: Faker::GreekPhilosophers.quote
   )
   puts "Article #{article.id} is created"
 end
