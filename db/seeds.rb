@@ -5,3 +5,19 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+puts "Limpiando base de datos..."
+Article.destroy_all
+puts "La base de datos ha sido limpiada"
+
+puts "Creating records for database, hold on..."
+100.times do
+  article = Article.create(
+    title: Faker::Books::CultureSeries.planet,
+    content: Faker::Books::Lovecraft.paragraph
+  )
+  puts "Article #{article.id} is created"
+end
+ 
+puts "Hecho"
+
